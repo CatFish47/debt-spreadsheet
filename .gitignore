@@ -1,0 +1,25 @@
+# Environment
+.env
+data/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+dist/
+build/
+*.egg
+
+# Node
+node_modules/
+frontend/dist/
+
+# Backend static (built frontend, not committed)
+backend/app/static/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
