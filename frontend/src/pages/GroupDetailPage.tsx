@@ -8,6 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { TransactionModal } from "@/components/TransactionModal"
 import { TransactionList } from "@/components/TransactionList"
 import { BalanceSummary } from "@/components/BalanceSummary"
+import { BreakdownTab } from "@/components/BreakdownTab"
 import { GroupJoinCard } from "@/components/GroupJoinCard"
 import { authApi } from "@/api/auth"
 
@@ -64,12 +65,16 @@ export function GroupDetailPage() {
           <TabsList className="w-full">
             <TabsTrigger value="transactions" className="flex-1">Transactions</TabsTrigger>
             <TabsTrigger value="balances" className="flex-1">Balances</TabsTrigger>
+            <TabsTrigger value="breakdown" className="flex-1">Breakdown</TabsTrigger>
           </TabsList>
           <TabsContent value="transactions">
             <TransactionList groupId={id!} members={members} currentUserId={currentUserId} />
           </TabsContent>
           <TabsContent value="balances">
             <BalanceSummary groupId={id!} members={members} currentUserId={currentUserId} />
+          </TabsContent>
+          <TabsContent value="breakdown">
+            <BreakdownTab groupId={id!} members={members} />
           </TabsContent>
         </Tabs>
       </main>
