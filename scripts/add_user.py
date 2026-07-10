@@ -15,6 +15,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
 from app.config import settings
 from app.database import SessionLocal
+from app.models import group, history, transaction  # noqa: F401 — register all models
 from app.models.user import User
 
 
